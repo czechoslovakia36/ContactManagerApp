@@ -4,19 +4,25 @@ package com.example.contactmanagerapp;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.Query;
+
+import java.util.List;
 
 @Dao
-public class ContactDAO {
+public interface ContactDAO {
 
  @Insert
- void insert(Contacts contacts){
-
- }
+ void insert(Contacts contacts);
 
  @Delete
- void delete( Contacts contacts){
+ void delete( Contacts contacts);
 
- }
+
+
+ @Query("SELECT * FROM contacts_table")
+ List<Contacts> getAllContacts();
+
+
 
 
 
